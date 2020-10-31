@@ -1,0 +1,17 @@
+pour acceder la partie admin de l'application cliquer sur le bouton du menu
+un formulaire se présente, demandant le login et mot de pass
+une fois le formulaire renseigné et valider vous avez accés à la 
+partie admin de l'application.
+
+Le routage des pages se fait pour la partie générale dans 'public/index.php'
+et pour la partie admin dans 'public/admin.php', accès autorisé après authentification
+
+le memu général de l'application se trouve dans 'pages/templates:default.php'
+
+la base de donnée de l'application est le fichier 'db.sql',
+cette base de donnée contient trois tables 
+	users
+	fournisseurs
+	categories
+	produits
+
