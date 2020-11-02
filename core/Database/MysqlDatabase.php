@@ -22,7 +22,7 @@
 
 		private function getPDO(){
 			if($this->pdo === null){
-				$pdo = new PDO('mysql:dbname=gestion_stock;host=localhost', 'root', '');
+				$pdo = new PDO('mysql:dbname=application_dob_contrat;host=localhost', 'root', '');
 				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$this->pdo = $pdo;
 			}

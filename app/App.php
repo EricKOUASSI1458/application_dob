@@ -8,7 +8,7 @@ use Core\DataBase\MysqlDataBase;
 		/*cette classe est créee pour facilité la mconnexion à la base de donnée et resoudre le pb de portée de variable*/
 
 		
-		public $titre_page = 'Biblio';
+		public $titre_page = 'Orance CI';
 		private $db_instance;
 		
 		private static $_instance;

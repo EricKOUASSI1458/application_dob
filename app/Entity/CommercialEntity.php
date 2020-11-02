@@ -2,7 +2,7 @@
 namespace App\Entity;
 use Core\Entity\Entity;
 
-class FournisseurEntity extends Entity{
+class CommercialEntity extends Entity{
 
 
 	public function getUrl(){

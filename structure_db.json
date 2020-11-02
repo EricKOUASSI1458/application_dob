@@ -1,0 +1,11 @@
+structure DB
+DB name "application_dob_contrat"
+tables
+  commercials (id, name, email, tel, created_at, updated_at, created_by, updated_by, statut)
+  clients (id, name, place, systeme, email, tel, fax, commercial_id, created_at, updated_at, created_by, updated_by, statut)
+  prestataires (id, name, place, email, tel, fax, created_at, updated_at, created_by, updated_by, statut)
+  contrats (id, montant, date_deb, date_fin, date_sign, type_cont, client_id, created_at, updated_at, created_by, updated_by, statut)
+  interventions (id, dte_int, rapport_int, fiche_int, prestataire_id, contrat_id, created_at, updated_at, created_by, updated_by, statut)
+  intervention_sans_contrats (id, dte_int, rapport_int, fiche_int, prestataire_id, client_id, created_at, updated_at, created_by, updated_by, statut)
+  users (id, login, password, type_user, created_at, updated_at, created_by, updated_by, statut)
+

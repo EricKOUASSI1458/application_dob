@@ -39,9 +39,11 @@
                 <a class="navbar-brand" href="?p=home">Accueil</a>
               </div>
               <ul class="nav navbar-nav">
-                <li><a href="?p=home">Produits</a></li>
-                <li><a href="?p=fournisseur.all">Fournisseurs</a></li>
-                <li><a href="?p=categorie.all">Categories</a></li>
+                <li><a href="?p=commercial.all">Commercials</a></li>
+                <li><a href="?p=client.all">Clients</a></li>
+                <li><a href="?p=prestataire.all">Prestataires</a></li>
+                <li><a href="?p=contrat.all">Contrats</a></li>
+                <li><a href="?p=intervention.all">Interventions</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -59,9 +61,11 @@
                 <a class="navbar-brand" href="?p=home">Admin</a>
               </div>
               <ul class="nav navbar-nav">
-                <li><a href="?p=home">Produits</a></li>
-                <li><a href="?p=fournisseurs.all">Fournisseurs</a></li>
-                <li><a href="?p=categories.all">Categories</a></li>
+                <li><a href="?p=home">Commerciaux</a></li>
+                <li><a href="?p=fournisseurs.all">Clients</a></li>
+                <li><a href="?p=categories.all">Prestataires</a></li>
+                <li><a href="?p=categories.all">Contrats</a></li>
+                <li><a href="?p=categories.all">Interventions</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
