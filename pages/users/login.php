@@ -20,9 +20,15 @@ if(!empty($_POST)){
 $form = new \Core\HTML\BootstrapForm($_POST);
 
 ?>
-
-<form method="post">
-	<?= $form->input('username', 'Pseudo');?>
-	<?= $form->input('password', 'Mot de passe', ['type' => 'password'] );?>
-	<button class="btn btn-primary">Envoyer</button>
-</form>
+<div style="margin-top: 200px;"></div>
+<div class="row">
+	<div class="col-md-3"></div>
+	<div class="col-md-6 well well-lg">
+		<form method="post">
+			<?= $form->input('username', 'Pseudo');?>
+			<?= $form->input('password', 'Mot de passe', ['type' => 'password'] );?>
+			<button class="btn btn-primary" style="margin-top: 20px;">Envoyer</button>
+		</form>
+	</div>
+	<div class="col-md-3"></div>
+</div>
