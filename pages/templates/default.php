@@ -26,7 +26,7 @@
 </head>
 
 
-<body>
+<body style="background: black;">
   <?php
     $auth = new \Core\Auth\DBAuth(App::getInstance()->getDb());
   ?>
