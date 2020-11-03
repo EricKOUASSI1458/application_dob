@@ -7,7 +7,7 @@
 	if(isset($_GET['p'])){
 		$page = $_GET['p'];
 	}else{
-		$page = 'home';
+		$page = 'commercial_admin';
 	}
 
 	//auth
@@ -21,36 +21,60 @@
 	}
 
 	ob_start();
-	if($page === 'home'){
-		require ROOT . '/pages/admin/produits/index.php';
-	}elseif($page === 'produits.edit') {
-		require ROOT . '/pages/admin/produits/edit.php';
-	}elseif($page === 'produits.add') {
-		require ROOT . '/pages/admin/produits/add.php';
-	}elseif($page === 'produits.delete') {
-		require ROOT . '/pages/admin/produits/delete.php';
+
+	/*commerciaux root for admin*/
+	if($page === 'commercial_admin') {
+	require ROOT . '/pages/admin/commercials/index.php';
+	}elseif($page === 'commercial_admin_edit') {
+	require ROOT . '/pages/admin/commercials/edit.php';
+	}elseif($page === 'commercial_admin_add') {
+	require ROOT . '/pages/admin/commercials/add.php';
+	}elseif($page === 'commercial_admin_delete') {
+	require ROOT . '/pages/admin/commercials/delete.php';
 	}
 
-	/*fournisseur root for admin*/
-	elseif($page === 'fournisseurs.all') {
-		require ROOT . '/pages/admin/fournisseurs/index.php';
-	}elseif($page === 'fournisseurs.edit') {
-		require ROOT . '/pages/admin/fournisseurs/edit.php';
-	}elseif($page === 'fournisseurs.add') {
-		require ROOT . '/pages/admin/fournisseurs/add.php';
-	}elseif($page === 'fournisseurs.delete') {
-		require ROOT . '/pages/admin/fournisseurs/delete.php';
+	/*commerciaux root for client*/
+	elseif($page === 'client_admin') {
+	require ROOT . '/pages/admin/clients/index.php';
+	}elseif($page === 'client_admin_edit') {
+	require ROOT . '/pages/admin/clients/edit.php';
+	}elseif($page === 'client_admin_add') {
+	require ROOT . '/pages/admin/clients/add.php';
+	}elseif($page === 'client_admin_delete') {
+	require ROOT . '/pages/admin/clients/delete.php';
 	}
 
-	/*categorie root for admin*/
-	elseif($page === 'categories.all') {
-	require ROOT . '/pages/admin/categories/index.php';
-	}elseif($page === 'categories.edit') {
-	require ROOT . '/pages/admin/categories/edit.php';
-	}elseif($page === 'categories.add') {
-	require ROOT . '/pages/admin/categories/add.php';
-	}elseif($page === 'categories.delete') {
-	require ROOT . '/pages/admin/categories/delete.php';
+	/*commerciaux root for prestataire*/
+	elseif($page === 'prestataire_admin') {
+	require ROOT . '/pages/admin/prestataires/index.php';
+	}elseif($page === 'prestataire_admin_edit') {
+	require ROOT . '/pages/admin/prestataires/edit.php';
+	}elseif($page === 'prestataire_admin_add') {
+	require ROOT . '/pages/admin/prestataires/add.php';
+	}elseif($page === 'prestataire_admin_delete') {
+	require ROOT . '/pages/admin/prestataires/delete.php';
+	}
+
+	/*commerciaux root for contrat*/
+	elseif($page === 'contrat_admin') {
+	require ROOT . '/pages/admin/contrats/index.php';
+	}elseif($page === 'contrat_admin_edit') {
+	require ROOT . '/pages/admin/contrats/edit.php';
+	}elseif($page === 'contrat_admin_add') {
+	require ROOT . '/pages/admin/contrats/add.php';
+	}elseif($page === 'contrat_admin_delete') {
+	require ROOT . '/pages/admin/contrats/delete.php';
+	}
+
+	/*commerciaux root for intervention*/
+	elseif($page === 'intervention_admin') {
+	require ROOT . '/pages/admin/interventions/index.php';
+	}elseif($page === 'intervention_admin_edit') {
+	require ROOT . '/pages/admin/interventions/edit.php';
+	}elseif($page === 'intervention_admin_add') {
+	require ROOT . '/pages/admin/interventions/add.php';
+	}elseif($page === 'intervention_admin_delete') {
+	require ROOT . '/pages/admin/interventions/delete.php';
 	}
 	
 	$content =  ob_get_clean();
