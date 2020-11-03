@@ -16,6 +16,9 @@
 	if(!$auth->logged()){
 		$app->forbidden();
 	}
+	if(!$auth->getTypeUser()){
+		$app->forbidden();
+	}
 
 	ob_start();
 	if($page === 'home'){

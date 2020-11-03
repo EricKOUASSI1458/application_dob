@@ -17,21 +17,30 @@ class DBAuth{
 		return false;
 	}
 
+	public function getTypeUser(){
+		if($this->logged()){
+			return $_SESSION['type_user'];
+		}
+	}
+
+	
+
 	/*
-	*@param $username
+	*@param $login
 	*@param $password
 	*@return boolean
 	*/
-	public function login($username, $password){
+	public function login($login, $password){
 		$user = $this->db->prepare('
-			SELECT * FROM users WHERE name = ?',
-			[$username],
+			SELECT * FROM users WHERE login = ?',
+			[$login],
 			null,
 			true
 		);
 		if($user){
 			if($user->password === sha1($password)){
 				$_SESSION['auth'] = $user->id;
+				$_SESSION['type_user'] = $user->type_user;
 				return true;
 			}
 		}
@@ -44,6 +53,7 @@ class DBAuth{
 
 	public function delogged(){
 		unset($_SESSION["auth"]);
+		unset($_SESSION["type_user"]);
 	}
 }
 ?>
