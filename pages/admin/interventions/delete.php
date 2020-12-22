@@ -5,6 +5,6 @@ if(!empty($_POST)){
 		'statut' => 0,
 		'updated_by' => 1
 	]);
-	header('Location: index.php?p=intervention.all');
+	header('Location: admin.php?p=intervention_admin');
 }
 ?>

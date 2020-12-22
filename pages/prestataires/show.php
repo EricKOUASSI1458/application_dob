@@ -49,4 +49,10 @@
             </div>
         </div>
     </div>
+
+    <div>
+        <h2 align="right">
+            <a href="?p=prestataire.all" type="button" class="btn btn-xs btn-orange-ci">Retour</a>
+        </h3>
+    </div>
 </div>

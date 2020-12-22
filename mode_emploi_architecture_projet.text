@@ -1,0 +1,22 @@
+Etapes pour utiliser l'architecture
+1- connexion à la base de donnée
+	- aller dans le dossier 'core/Database/MsqlDatabase.php' avec la 
+	fonction getPDO(), renseigner le nom de la base de donnée
+	- pour manipuler les informations de la base de donnée dans notre application,
+	il faut pour chaque table implémenter deux classes.
+	La classe qui represente la table et ses requêtes sql dans le dossier
+	'app/Table/NameTable.php'.
+	La classe qui represente l'entité (les differentes colonnes de la tables et le propriétes
+	défini à la volée) dans le dossier 'app/Entity/NameEntity.php'.
+
+2- Afficher les données dans la vue
+	pour la vue nous avons le routing de l'application qui se trouve dans le dossier 
+	'public/index.php' pour la partir grand public (GP)
+	'public/admin.php' pour la partir admin
+	ce fichier de routage contient la variable $content qui represent la page a affiché
+	en fonction du paramètre 'p' selectionné.
+	Dans le dossier 'page/tempates/index.php' se trouve le layoute de la partie GP
+	Dans le dossier 'page/tempates/admin.php' se trouve le layoute de la partie admin
+
+3- Système d'authentification de l'application : 
+	la gestion de l'authentification se fait dans le fichier 'core/Auth/DbAuth.php'

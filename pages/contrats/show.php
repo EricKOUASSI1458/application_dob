@@ -1,14 +1,14 @@
 <?php
-	$app = App::getInstance();
+    $app = App::getInstance();
 
-	$contrat = $app->getTable('Contrat')->find($_GET['id']);
+    $contrat = $app->getTable('Contrat')->find($_GET['id']);
     $interventions = $app->getTable('Intervention')->interventionByContrat($_GET['id']);
-	if($contrat === false){
-		$app->notFound();
-	}
+    if($contrat === false){
+        $app->notFound();
+    }
 
-	$app->titre_page = $contrat->montant ;
-	/*$user = User::find($book->user_id);*/
+    $app->titre_page = $contrat->montant ;
+    /*$user = User::find($book->user_id);*/
 ?>
 
 
@@ -40,7 +40,7 @@
 
     <div class="row">
         <div class="col-md-12">
-        	<div class="col-md-3 text-right"><strong>Date signature</strong></div>
+            <div class="col-md-3 text-right"><strong>Date signature</strong></div>
             <div class="col-md-3">
                 <?= $contrat->date_sign  ?>
             </div>
@@ -80,10 +80,16 @@
         </thead>
         <?php foreach($interventions as $intervention): ?>
         <tr>
-        	<td><?= $intervention->id ?></td>
-        	<td><?= $intervention->dte_int ?></td>
-        	<td><?= $intervention->_prestataire_name ?></td>
+            <td><?= $intervention->id ?></td>
+            <td><?= $intervention->dte_int ?></td>
+            <td><?= $intervention->_prestataire_name ?></td>
         </tr>
-		<?php endforeach;?>
+        <?php endforeach;?>
     </table>
+
+    <div>
+        <h2 align="right">
+            <a href="?p=contrat.all" type="button" class="btn btn-xs btn-orange-ci">Retour</a>
+        </h3>
+    </div>
 </div>

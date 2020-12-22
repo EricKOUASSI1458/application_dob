@@ -24,7 +24,8 @@
 	            <a  href="?p=commercial.show&id=<?= $commercial->id;?>" title="Plus d'info">
 	                <span class="glyphicon glyphicon-eye-open"></span>
 	            </a>
-	            <a  href="?p=commercial.edit&id=<?= $commercial->id;?>"  title="Modifier">
+                
+	            <!-- <a  href="?p=commercial.edit&id=<?= $commercial->id;?>"  title="Modifier">
 	                <span class="glyphicon glyphicon-pencil"></span>
 	            </a>
 
@@ -33,7 +34,7 @@
                     <button type="submit">
                         <span class="glyphicon glyphicon-trash"></span>
                     </button>
-                </form>
+                </form> -->
 
         	</td>
         </tr>

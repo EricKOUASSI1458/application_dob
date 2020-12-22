@@ -6,6 +6,36 @@ tables
   prestataires (id, name, place, email, tel, fax, created_at, updated_at, created_by, updated_by, statut)
   contrats (id, montant, date_deb, date_fin, date_sign, type_cont, client_id, created_at, updated_at, created_by, updated_by, statut)
   interventions (id, dte_int, rapport_int, fiche_int, prestataire_id, contrat_id, created_at, updated_at, created_by, updated_by, statut)
-  intervention_sans_contrats (id, dte_int, rapport_int, fiche_int, prestataire_id, client_id, created_at, updated_at, created_by, updated_by, statut)
+  intervention_sans_contrats (id, dte_int, montant, rapport_int, fiche_int, prestataire_id, client_id, created_at, updated_at, created_by, updated_by, statut)
   users (id, login, password, type_user, created_at, updated_at, created_by, updated_by, statut)
 
+
+
+
+
+
+PDA
+implémenter les script pour la page statistique (count row) ok
+implément script pour upload fichier (interface intervention)
+masquer les boutons edit et delete de l'interface des users simple ok
+implémenter interface pour contrat en cours, echu, echeant dans trois mois ok
+mettre des bouton sur les pages showOne 'client et contrat' pour respectivement
+	ajouter contrat et intervention ok
+mettre un bouton sur la page showone client pour l'ajout des interventions sans 
+	contrat de maintenance
+Afficher dans le menu le speudo de la ressourche connectée
+Mettre en place le script de pagination
+
+Recommandation Paul
+Enlever l'onglet commercial
+Dans la page statistique mettre un bouton pour les interventions du mois en cours ok
+Dans la table intervention prévoir un champ statu
+Un champ pour saisi la date fin contrat
+
+remplacer le bouton sauvegarde par enregistrer et prevoir un bouton annuler
+
+
+SELECT date_fin
+FROM contrats
+WHERE date_fin <= DATE_ADD(NOW(), INTERVAL 3 MONTH) AND 
+date_fin>=NOW()

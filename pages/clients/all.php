@@ -24,11 +24,12 @@
         	<td><?= $client->systeme ?></td>
             <td><?= $client->tel ?></td>
         	<td><?= $client->commercial ?></td>
-        	<td>
+        	<td align="center">
 	            <a  href="<?= $client->showUrl();?>" title="Plus d'info">
 	                <span class="glyphicon glyphicon-eye-open"></span>
 	            </a>
-	            <a  href="<?=$client->editUrl()?>"  title="Modifier">
+                
+	            <!-- <a  href="<?=$client->editUrl()?>"  title="Modifier">
 	                <span class="glyphicon glyphicon-pencil"></span>
 	            </a>
 
@@ -37,7 +38,7 @@
                     <button type="submit">
                         <span class="glyphicon glyphicon-trash"></span>
                     </button>
-                </form>
+                </form> -->
 
         	</td>
         </tr>

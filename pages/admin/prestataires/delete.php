@@ -5,6 +5,6 @@ if(!empty($_POST)){
 		'statut' => 0,
 		'updated_by' => 1
 	]);
-	header('Location: index.php?p=prestataire.all');
+	header('Location: admin.php?p=prestataire_admin');
 }
 ?>

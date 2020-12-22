@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title><?= App::getInstance()->titre_page;?></title>
     <link rel="stylesheet" href="../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../public/css/persoStyle.css">
     <script src="../../public/js/jquery.min.js"></script>
     <script src="../../public/js/bootstrap.js"></script>
     <style type="text/css">
@@ -37,18 +38,18 @@
           <nav class="navbar navbar-inverse">
             <div class="container-fluid">
               <div class="navbar-header">
-                <a class="navbar-brand" href="?p=home">Accueil</a>
+                <a class="navbar-brand" href="?p=accueil">Accueil</a>
               </div>
               <ul class="nav navbar-nav">
-                <li><a href="?p=commercial.all">Commerciaux</a></li>
+                <!-- <li><a href="?p=commercial.all">Commerciaux</a></li> -->
                 <li><a href="?p=client.all">Clients</a></li>
                 <li><a href="?p=prestataire.all">Prestataires</a></li>
                 <li><a href="?p=contrat.all">Contrats</a></li>
                 <li><a href="?p=intervention.all">Interventions</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="index.php?p=delogin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="?p=info_user"><span class="glyphicon glyphicon-user"></span>  <?= $auth->get_pseudo() ?></a></li>
+                <li><a href="index.php?p=delogin"><span class="glyphicon glyphicon-log-in"></span> Deconnexion</a></li>
               </ul>
             </div>
           </nav>
@@ -56,7 +57,6 @@
           ?>
 
          
-
           <div class="starter-template">
               <?= $content; ?>
           </div>

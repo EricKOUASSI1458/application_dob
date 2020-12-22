@@ -26,6 +26,11 @@ use Core\Auth\DBAuth;
 		require ROOT . '/pages/commercials/delete.php';
 	}
 
+	/*routing accueil*/
+	elseif($page === 'accueil') {
+		require ROOT . '/pages/accueil/home.php';
+	}
+
 	/*routing client*/
 	elseif($page === 'client.all'){
 		require ROOT . '/pages/clients/all.php';
@@ -63,6 +68,12 @@ use Core\Auth\DBAuth;
 		require ROOT . '/pages/contrats/edit.php';
 	}elseif($page === 'contrat.delete') {
 		require ROOT . '/pages/contrats/delete.php';
+	}elseif($page === 'contrat.list_encours') {
+	require ROOT . '/pages/contrats/list_encours.php';
+	}elseif($page === 'contrat.list_expirant_3_mois') {
+	require ROOT . '/pages/contrats/list_expirant_3_mois.php';
+	}elseif($page === 'contrat.list_echue') {
+	require ROOT . '/pages/contrats/list_echue.php';
 	}
 
 	/*routing intervention*/
@@ -76,7 +87,28 @@ use Core\Auth\DBAuth;
 		require ROOT . '/pages/interventions/edit.php';
 	}elseif($page === 'intervention.delete') {
 		require ROOT . '/pages/interventions/delete.php';
+	}elseif($page === 'intervention.list_realisee') {
+	require ROOT . '/pages/interventions/list_realisee.php';
+	}elseif($page === 'intervention.list_a_venir') {
+	require ROOT . '/pages/interventions/list_a_venir.php';
+	}elseif($page === 'intervention.list_mois_courant') {
+	require ROOT . '/pages/interventions/list_mois_en_cours.php';
 	}
+
+	/*rooting intervention_sans_contrat*/
+	elseif($page === 'interventions_ans_contrat.add') {
+	require ROOT . '/pages/intervention_sans_contrats/add.php';
+	}elseif($page === 'intervention_sans_contrat.all') {
+	require ROOT . '/pages/intervention_sans_contrats/index.php';
+	}elseif($page === 'intervention_sans_contrat.show') {
+	require ROOT . '/pages/intervention_sans_contrats/show.php';
+	}elseif($page === 'intervention_sans_contrat.delete') {
+	require ROOT . '/pages/intervention_sans_contrats/delete.php';
+	}elseif($page === 'intervention_sans_contrat.edit') {
+	require ROOT . '/pages/intervention_sans_contrats/edit.php';
+	}
+
+
 
 	/*block authentification*/
 	elseif($page === 'login') {
@@ -84,6 +116,15 @@ use Core\Auth\DBAuth;
 	}elseif($page === 'delogin') {
 		require ROOT . '/pages/users/delogin.php';
 	}
+
+	/*gestion compte*/
+	elseif($page === 'info_user') {
+	require ROOT . '/pages/users/gerer_mon_compte.php';
+	}elseif($page === 'modif_user') {
+	require ROOT . '/pages/users/edit.php';
+	}
+	/*gestion compte*/
+
 	
 	$content =  ob_get_clean();
 	require ROOT . '/pages/templates/default.php';

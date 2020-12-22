@@ -54,6 +54,46 @@ class InterventionTable extends Table{
 			LEFT JOIN prestataires ON interventions.prestataire_id = prestataires.id
 			WHERE interventions.id = ?", [$id], true );
 	}
+
+
+	public function total_actif(){ 
+		return $this->query("
+			SELECT COUNT(id) as total_intervention
+			FROM  {$this->table}
+			WHERE statut=1", "", true
+		);
+	}
+
+
+	public function total_realise(){ 
+		return $this->query("SELECT COUNT(id) AS 
+			total_realise
+			FROM {$this->table} WHERE dte_int<= NOW() AND statut=1", "", true
+		);
+	}
+
+	public function total_a_venir(){ 
+		return $this->query("SELECT COUNT(id) AS 
+			total_a_venir
+			FROM {$this->table} WHERE dte_int> NOW() AND statut=1", "", true
+		);
+	}
+
+	public function total_mois_courant(){ 
+		return $this->query("SELECT COUNT(id) AS 
+			total_mois_courant  FROM interventions
+			WHERE MONTH( dte_int ) = MONTH(NOW()) AND YEAR( dte_int )=YEAR(NOW()) AND  statut=1", "", true
+		);
+	}
+
+	public function nb_intervention_by_contrat($contrat_id){ 
+		return $this->query("SELECT COUNT(id) AS nb_intervention_by_contrat
+			FROM interventions WHERE contrat_id = ?", [$contrat_id], true
+		);
+	}
+
+
+	
 }
 
 ?>

@@ -6,7 +6,7 @@ if(!empty($_POST)){
 		if($_SESSION['type_user']){
 			header('Location: admin.php');
 		}else{
-			header('Location: index.php?p=commercial.all');
+			header('Location: index.php?p=accueil');
 		}
 		
 	}else{
@@ -20,15 +20,31 @@ if(!empty($_POST)){
 $form = new \Core\HTML\BootstrapForm($_POST);
 
 ?>
-<div style="margin-top: 200px;"></div>
+<div style="margin-top: 120px;"></div>
 <div class="row">
-	<div class="col-md-3"></div>
-	<div class="col-md-6 well well-lg">
+
+	<div class="col-sm-12">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<p style="height: 100px;">
+				<img src="../public/image/welcome.png" alt="logo oci">
+			</p>
+		</div>
+		<div class="col-sm-3"></div>
+		<!--  -->
+	</div>
+
+	<div class="col-sm-3">
+			<img src="../public/image/logo.png" alt="logo oci">
+	</div>
+	<div class="col-sm-6 well well-lg">
 		<form method="post">
 			<?= $form->input('username', 'Pseudo');?>
 			<?= $form->input('password', 'Mot de passe', ['type' => 'password'] );?>
-			<button class="btn btn-primary" style="margin-top: 20px;">Envoyer</button>
+			<button class="btn btn-primary col-sm-4" style="margin-top: 20px;">Valider</button>
+			<div class="col-sm-4"></div>
+			<a href="#" class="btn col-sm-4 orange_inverse" style="margin-top: 20px;">Mot de passe oublié</a>
 		</form>
 	</div>
-	<div class="col-md-3"></div>
+	<div class="col-sm-3"></div>
 </div>

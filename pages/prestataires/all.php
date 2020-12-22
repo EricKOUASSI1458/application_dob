@@ -20,11 +20,11 @@
         	<td><?= $prestataire->name ?></td>
         	<td><?= $prestataire->email ?></td>
         	<td><?= $prestataire->tel ?></td>
-        	<td>
+        	<td align="center">
                 <a  href="<?= $prestataire->showUrl();?>" title="Plus d'info">
                     <span class="glyphicon glyphicon-eye-open"></span>
                 </a>
-                <a  href="<?=$prestataire->editUrl()?>"  title="Modifier">
+                <!-- <a  href="<?=$prestataire->editUrl()?>"  title="Modifier">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </a>
 
@@ -33,7 +33,7 @@
                     <button type="submit">
                         <span class="glyphicon glyphicon-trash"></span>
                     </button>
-                </form>
+                </form> -->
 
             </td>
         </tr>

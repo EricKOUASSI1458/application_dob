@@ -88,4 +88,11 @@
             </div>
         </div>
     </div>
+
+
+    <div>
+        <h2 align="right">
+            <a href="?p=intervention.all" type="button" class="btn btn-xs btn-orange-ci">Retour</a>
+        </h3>
+    </div>
 </div>

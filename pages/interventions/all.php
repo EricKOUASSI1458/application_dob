@@ -6,8 +6,16 @@ $app->titre_page = "All Interventions";
 ?>
 
 <div class="row">
-	<h1 align="center">Liste des Interventions</h1>
-	<table class='table table-bordered table-striped'>
+	<h1 align="">Liste des interventions
+        <!-- <a href="?p=intervention_admin_add" class="btn  btn-orange-ci pull-right">Ajouter une intervention</a> -->
+    </h1>
+
+    <?php include('main_menu_intervention.php') ?>
+
+
+
+
+	<table class='table table-bordered'>
         <thead>
             <tr>
                 <th>#</th>
@@ -21,33 +29,40 @@ $app->titre_page = "All Interventions";
         </thead>
         <?php foreach($tableIntervention->last() as $intervention): ?>
         <?php
-        if ($intervention->statut) {?> 
+        if ($intervention->statut) {
 
-               
-        <tr>
-            <td><?= $intervention->id ?></td>
-            <td> <?= $tableClient->find($intervention->_contrat_client_id)->name ?> </td>
-            <td><?= $intervention->dte_int ?></td>
-            <td><?=    substr($intervention->rapport_int,0,20) ?> ...</td>
-            <td><?= $intervention->_prestataire_name ?> FCFA</td>
-            <td><?= $intervention->_contrat_date_deb ?></td>
-        	<td>
-	            <a  href="<?= $intervention->showUrl();?>" title="Plus d'info">
-	                <span class="glyphicon glyphicon-eye-open"></span>
-	            </a>
-	            <a  href="<?=$intervention->editUrl()?>"  title="Modifier">
-	                <span class="glyphicon glyphicon-pencil"></span>
-	            </a>
+            if ($intervention->dte_int < date('Y-m-d') ){?>
+            <tr class="bg-rouge">  
+            <?php
+                }else{
+                    ?>
+            <tr>
+                    <?php
+                }
+            ?>
+                <td><?= $intervention->id ?></td>
+                <td> <?= $tableClient->find($intervention->_contrat_client_id)->name ?> </td>
+                <td><?= $intervention->dte_int ?></td>
+                <td><?=    substr($intervention->rapport_int,0,20) ?> ...</td>
+                <td><?= $intervention->_prestataire_name ?> </td>
+                <td><?= $intervention->_contrat_date_deb ?></td>
+            	<td align="center">
+    	            <a  href="<?= $intervention->showUrl();?>" title="Plus d'info">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+    	            <!-- <a   href="?p=intervention_admin_edit&id=<?= $intervention->id;?>"  title="Modifier">
+    	                <span class="glyphicon glyphicon-pencil"></span>
+    	            </a>
 
-                <form action="<?=$intervention->deleteUrl()?>" style="display: inline;" method="post">
-                    <input type="hidden" name="id" value="<?=$intervention->id?>">
-                    <button type="submit">
-                        <span class="glyphicon glyphicon-trash"></span>
-                    </button>
-                </form>
+                    <form action="?p=intervention_admin_delete" style="display: inline;" method="post">
+                        <input type="hidden" name="id" value="<?=$intervention->id?>">
+                        <button type="submit">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </form> -->
 
-        	</td>
-        </tr>
+            	</td>
+            </tr>
 
 
         <?php

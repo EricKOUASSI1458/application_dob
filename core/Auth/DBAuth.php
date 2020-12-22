@@ -41,6 +41,7 @@ class DBAuth{
 			if($user->password === sha1($password)){
 				$_SESSION['auth'] = $user->id;
 				$_SESSION['type_user'] = $user->type_user;
+				$_SESSION['pseudo'] = $user->login;
 				return true;
 			}
 		}
@@ -51,9 +52,15 @@ class DBAuth{
 		return isset($_SESSION['auth']);
 	}
 
+	public function get_pseudo(){
+		return $_SESSION['pseudo'];
+	}
+
+
 	public function delogged(){
 		unset($_SESSION["auth"]);
 		unset($_SESSION["type_user"]);
+		unset($_SESSION["pseudo"]);
 	}
 }
 ?>

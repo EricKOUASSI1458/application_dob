@@ -10,7 +10,7 @@ if(!empty($_POST)){
 	]);
 	if($result){
 		
-		header('Location: index.php?p=commercial.all');
+		header('Location: admin.php?p=commercial_admin');
 		/*?><div class="alert alert-success">Bien modifié</div> <?php*/
 		
 	}
@@ -26,7 +26,7 @@ $form = new \Core\HTML\BootstrapForm($commercial);
 		<?= $form->input('name', 'Nom');?>
 		<?= $form->input('email', 'Email');?>
 		<?= $form->input('tel', 'Tel');?>
-		<button class="btn btn-primary">Sauvegarder</button>
+		<button style="margin-top: 15px;" class="btn btn-primary">Sauvegarder</button>
 	</form>
 </div>
 

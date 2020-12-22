@@ -51,6 +51,42 @@ class ContratTable extends Table{
 			LEFT JOIN clients ON contrats.client_id = clients.id
 			WHERE contrats.id = ?", [$id], true );
 	}
+
+
+	public function total_actif(){ 
+		return $this->query("
+			SELECT COUNT(id) as total_contrat
+			FROM {$this->table}
+			WHERE statut=1", "", true
+		);
+	}
+
+	public function total_contrat_en_cours(){ 
+		return $this->query("SELECT COUNT(id) AS 
+			total_contrat_en_cours
+			FROM contrats WHERE date_fin>= NOW()", "", true
+		);
+	}
+
+
+	public function total_contrat_echeant_dans_trois_mois(){ 
+		return $this->query("SELECT COUNT(id) AS total_contrat_echeant_dans_trois_mois
+			FROM contrats
+			WHERE date_fin <= DATE_ADD(NOW(), INTERVAL 3 MONTH) AND 
+			date_fin>=NOW()", "", true
+		);
+	}
+
+
+	public function total_contrat_echu(){ 
+		return $this->query("SELECT COUNT(id) AS 
+			total_contrat_echu
+			FROM contrats WHERE date_fin<= NOW()", "", true
+		);
+	}
+
+	
+
 }
 
 ?>

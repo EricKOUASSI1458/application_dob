@@ -19,7 +19,6 @@ class ClientTable extends Table{
 		);
 	}
 
-
 	/**
 		* Récupère les derniers livres de l'auteur demandé
 		*@ param $user_id int
@@ -46,6 +45,15 @@ class ClientTable extends Table{
 			FROM clients
 			LEFT JOIN commercials ON clients.commercial_id = commercials.id
 			WHERE clients.id = ?", [$id], true );
+	}
+
+
+	public function total_actif(){ 
+		return $this->query("
+			SELECT COUNT(id) as total_client
+			FROM {$this->table}
+			WHERE statut=1", "", true
+		);
 	}
 }
 

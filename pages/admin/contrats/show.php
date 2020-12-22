@@ -86,4 +86,10 @@
         </tr>
 		<?php endforeach;?>
     </table>
+
+    <div>
+        <h2 align="right">
+            <a href="?p=contrat_admin" type="button" class="btn btn-xs btn-orange-ci">Retour</a>
+        </h3>
+    </div>
 </div>

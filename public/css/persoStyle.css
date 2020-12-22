@@ -1,0 +1,28 @@
+.orange_inverse{
+	color: #fff;
+    background-color:  #f16b0c;
+    border-color:  #f16b0c;
+}
+
+
+.btn-orange-ci {
+    color: #fff;
+    background-color: #222222;
+    border-color: #222222;
+}
+.btn-orange-ci:hover,
+.btn-orange-ci:focus {
+    color: #fff;
+    background-color:  #f16b0c;
+    border-color:  #f16b0c;
+}
+
+.bg-rouge{
+	background-color: #d9534f;
+}
+
+.font-color-orange{
+    color: #f16b0c;
+}
+
+
